@@ -18,8 +18,8 @@ def get_contract(id):
     """
     contract = next((c for c in contracts if c["id"] == id), None)
     if contract is None:
-        return make_response(jsonify({"error": "Contract not found"}), 404)
-    return make_response(jsonify(contract), 200)
+        return make_response("Contract not found", 404)
+    return make_response(contract["contract_information"], 200)
 
 
 @app.route('/customer/<customer_name>')
